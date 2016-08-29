@@ -1,0 +1,16 @@
+<html>
+
+<h1>Overwatch Table</h1>
+
+
+<div>
+{% for item in data.patchNotes %}
+
+  <h4>{{ item.patchVersion }}</h4>
+
+  <div> {{ item.detail|safe }}</div>
+
+{% endfor %}
+</div>
+
+</html>
