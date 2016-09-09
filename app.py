@@ -7,8 +7,19 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello, World!'
+def home():
+    return render_template("home.html")
+
+@app.route('/rankings')
+def rankings():
+    return render_template("rankings.html")
+
+@app.route('/stats/<name>')
+def stats(name):
+    r = requests.get("http://ow-api.herokuapp.com/stats/pc/us/%s" % name)
+    print r.text
+    return render_template("stats.html", data=r.json())
+
 
 @app.route('/hello-json')
 def hello_json():

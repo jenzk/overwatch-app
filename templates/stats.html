@@ -1,0 +1,39 @@
+<html>
+  <head> <title> Rankings</title></head>
+
+<div>
+<h1>Stats for {{ data.username }}</h1>
+
+<h3>Competitive</h3>
+<div>
+
+<table border="2">
+  <tr><th>Title</th>
+      <th>Stat</th></tr>
+  {% for item in data.stats.average.competitive %}
+  <tr>
+    <td>{{item.title}}</td>
+    <td>{{item.value}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h3>Quickplay</h3>
+<table border="2">
+  <tr><th>Title</th>
+      <th>Stat</th></tr>
+  {% for item in data.stats.average.quickplay %}
+  <tr>
+    <td>{{item.title}}</td>
+    <td>{{item.value}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+<div>
+
+
+</div>
+
+</html>
