@@ -1,13 +1,12 @@
-<html>
-  <head> <title> Rankings</title></head>
-
-<div>
+{% extends "layout.html" %}
+ {% block title %} Stats {% endblock %}
+{% block body %}
 <h1>Stats for {{ data.username }}</h1>
 
 <h3>Competitive</h3>
 <div>
 
-<table border="2">
+<table class="table table-striped table-bordered">
   <tr><th>Title</th>
       <th>Stat</th></tr>
   {% for item in data.stats.average.competitive %}
@@ -19,7 +18,7 @@
 </table>
 
 <h3>Quickplay</h3>
-<table border="2">
+<table class="table table-striped table-bordered">
   <tr><th>Title</th>
       <th>Stat</th></tr>
   {% for item in data.stats.average.quickplay %}
@@ -30,10 +29,4 @@
   {% endfor %}
 </table>
 
-
-<div>
-
-
-</div>
-
-</html>
+{% endblock %}
