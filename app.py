@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask import jsonify, render_template
 import requests
@@ -35,3 +36,7 @@ def overwatch_data():
 def overwatch_table():
     r = requests.get("https://api.lootbox.eu/patch_notes")
     return render_template("overwatch_table.html", data=r.json())
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
